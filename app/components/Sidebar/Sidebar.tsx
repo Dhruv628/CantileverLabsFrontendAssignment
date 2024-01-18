@@ -18,8 +18,8 @@ const Sidebar = () => {
 
   const Links = [
     { href: "#", icon: <Home height={20} width={20} fill={fillIndex === 0 ? "white" : "#EA7C69"} /> },
-    { href: "/components/delivery", icon: <Routing height={20} width={20} fill={(fillIndex === 1 || pathname === "/components/delivery") ? "white" : "#EA7C69"} /> },
-    { href: "/components/dashboard", icon: <GraphIcon height={20} width={20} fill={(fillIndex === 2 || pathname === "/components/dashboard") ? "white" : "#EA7C69"} /> },
+    { href: "/components/Delivery", icon: <Routing height={20} width={20} fill={(fillIndex === 1 || pathname === "/components/delivery" || pathname === "/components/Delivery") ? "white" : "#EA7C69"} /> },
+    { href: "/components/Dashboard", icon: <GraphIcon height={20} width={20} fill={(fillIndex === 2 || pathname === "/components/dashboard" || pathname === "/components/Dashboard") ? "white" : "#EA7C69"} /> },
     { href: "#", icon: <Message height={20} width={20} fill={fillIndex === 3 ? "white" : "#EA7C69"} /> },
     { href: "#", icon: <Notification height={20} width={20} fill={fillIndex === 4 ? "white" : "#EA7C69"} /> },
     { href: "#", icon: <Setting height={20} width={20} fill={fillIndex === 5 ? "white" : "#EA7C69"} /> },
