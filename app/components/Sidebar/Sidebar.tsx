@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Home from "@/public/assets/Home";
@@ -28,6 +28,17 @@ const Sidebar = () => {
 
   const onHover = (index:any) => setFillIndex(index);
 
+  const convertPath=(href:string)=>{
+  let input=href.split("/")[2]?.toUpperCase();
+  let path=pathname.split("/")[2]?.toUpperCase(); 
+  if(path===input){
+    return true
+  }else{
+    false
+  }
+  } 
+    
+  
   return (
     <div className="bg-secondary pl-6 pr-3 py-6 text-white flex items-center justify-between flex-col h-full rounded-r-xl">
       <div className="p-2 mb-2 rounded-xl bg-[#EA9769] bg-opacity-30">
@@ -39,14 +50,14 @@ const Sidebar = () => {
           className={`relative  w-full flex justify-center items-center  `}
           href={e.href}
         >
-          {(index === fillIndex || pathname === e.href) && (
+          {(index === fillIndex || convertPath(e.href)) && (
             <div className="absolute z-10">
               <LinkHoverPattern />
             </div>
           )}
           <div 
           onMouseEnter={() => onHover(index)}
-          onMouseLeave={() => onHover(null)} className={`rounded-lg z-20 w-full flex justify-center items-center  ${(index === fillIndex || pathname === e.href) ? "bg-[#EA7C69]" : ""} p-5`}>
+          onMouseLeave={() => onHover(null)} className={`rounded-lg z-20 w-full flex justify-center items-center  ${(index === fillIndex || convertPath(e.href)) ? "bg-[#EA7C69]" : ""} p-5`}>
             {e.icon}
           </div>
         </Link>
